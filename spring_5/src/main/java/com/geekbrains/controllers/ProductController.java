@@ -97,10 +97,10 @@ public class ProductController {
         Specification<Product> specification = Specification.where(null);
         if(request.getParameter("min") != null){
             double k = Double.parseDouble(request.getParameter("min"));
-            specification.and(ProductSpecs.costGreaterOrEq(Integer.parseInt(request.getParameter("min"))));
+            specification = specification.and(ProductSpecs.costGreaterOrEq(k));
         }
         if(request.getParameter("max") != null){
-            specification.and(ProductSpecs.costLesserOrEq(Integer.parseInt(request.getParameter("max"))));
+            specification = specification.and(ProductSpecs.costLesserOrEq(Integer.parseInt(request.getParameter("max"))));
         }
         Page<Product> pageProd = productService.findPagesFilterAndPaging(page, size, specification);
         model.addAttribute("products", pageProd);
