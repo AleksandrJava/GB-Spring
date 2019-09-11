@@ -1,0 +1,35 @@
+SET search_path TO thymeleaf;
+CREATE TABLE products (id bigserial PRIMARY KEY, title VARCHAR(255), cost integer);
+
+SELECT * FROM products;
+
+INSERT INTO products VALUES (1,'book', 1600);
+INSERT INTO products VALUES (2,'chair', 12300);
+INSERT INTO products VALUES (3,'monitor', 9900);
+INSERT INTO products VALUES (4,'sneakers', 4600);
+INSERT INTO products VALUES (5,'t-shirt', 1500);
+INSERT INTO products VALUES (6,'iPhone xr', 70000);
+INSERT INTO products VALUES (7,'iPad', 80000);
+INSERT INTO products VALUES (8,'samsung', 65000);
+INSERT INTO products VALUES (9,'lg', 30000);
+INSERT INTO products VALUES (10,'one plus', 35000);
+INSERT INTO products VALUES (11,'mobile1', 10000);
+INSERT INTO products VALUES (12,'mobile2', 11000);
+INSERT INTO products VALUES (13,'mobile3', 12000);
+INSERT INTO products VALUES (14,'mobile4', 13000);
+INSERT INTO products VALUES (15,'mobile5', 14000);
+INSERT INTO products VALUES (16,'mobile6', 15000);
+INSERT INTO products VALUES (17,'mobile7', 16000);
+INSERT INTO products VALUES (18,'mobile8', 17000);
+INSERT INTO products VALUES (19,'mobile9', 18000);
+INSERT INTO products VALUES (20,'mobile10', 19000);
+INSERT INTO products VALUES (21,'mobile11', 20000);
+INSERT INTO products VALUES (22,'mobile12', 21000);
+INSERT INTO products VALUES (23,'mobile13', 22000);
+INSERT INTO products VALUES (24,'mobile14', 23000);
+INSERT INTO products VALUES (25,'mobile15', 24000);
+INSERT INTO products VALUES (26,'mobile16', 25000);
+INSERT INTO products VALUES (27,'mobile17', 26000);
+INSERT INTO products VALUES (28,'mobile18', 27000);
+INSERT INTO products VALUES (29,'mobile19', 28000);
+INSERT INTO products VALUES (30,'mobile20', 29000);
