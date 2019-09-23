@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Cart</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <div th:replace="~{navigation :: navigation(Cart)}" />
+
+    <h1>Cart</h1>
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Название товара</th>
+            <th>Цена</th>
+            <th>Количество</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.getValue().getTitle()}"/>
+            <td th:text="${product.getValue().getPrice()}"/>
+            <td>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="input-group">
+                            <h4><span class="badge badge-secondary" th:text="${product.getValue().getAmount()}"></span></h4>
+                            <span class="input-group-btn">
+                                <a class="btn btn-outline-secondary" type="button" th:href="@{'/cart/delete'(id=${product.getValue().getId()})}">-</a>
+                                <a class="btn btn-outline-secondary" type="button" th:href="@{'/cart/add'(id=${product.getValue().getId()})}">+</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="h4">Всего товаров в корзине на:</span>
+            </td>
+            <td>
+                <div class="h4" th:text="${allCost}"></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
